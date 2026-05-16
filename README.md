@@ -4,8 +4,17 @@ Rename. Transform. Collect. Name Tag++ lets players discover 35 unique names acr
 
 ## Links
 
-- [GDD](https://www.notion.so/Name-Tag-GDD-35e4dedd24de81c59437ee4f43213e03)
+- [Game Design Document](https://www.notion.so/Name-Tag-GDD-35e4dedd24de81c59437ee4f43213e03)
 - [rgl](https://github.com/ink0rr/rgl)
+
+## Download
+
+Download the latest `.mcaddon` from the [Releases page](https://github.com/AdonisZK-Portfolio/NameTagPlusPlus/releases).
+
+1. Open the latest release.
+2. Download `NameTagPlusPlus-*.mcaddon` from Assets.
+3. Open the downloaded file with Minecraft Bedrock.
+4. Enable both the Behavior Pack and Resource Pack in your world settings.
 
 ## Repository Layout
 
