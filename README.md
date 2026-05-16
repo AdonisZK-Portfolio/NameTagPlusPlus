@@ -2,6 +2,10 @@
 
 Rename. Transform. Collect. Name Tag++ lets players discover 35 unique names across five tiers, turning compatible mobs into companions, empowered enemies, and boss encounters through a survival progression system built around the vanilla Name Tag.
 
+## Asset Notice
+
+All current visual, audio, and icon assets are placeholder assets for prototype and portfolio review. They are not final production assets and may be replaced in future versions.
+
 ## Links
 
 - [Game Design Document](https://www.notion.so/Name-Tag-GDD-35e4dedd24de81c59437ee4f43213e03)
