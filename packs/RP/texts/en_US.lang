@@ -1,0 +1,34 @@
+pack.name=Name Tag++ RP
+pack.description=Build your army. One name at a time.
+
+item.ntpp:rare_nametag=Rare Name Tag
+item.ntpp:epic_nametag=Epic Name Tag
+item.ntpp:legendary_nametag=Legendary Name Tag
+item.ntpp:mythic_nametag=Mythic Name Tag
+
+item.ntpp:rare_material=Rare Material
+item.ntpp:epic_material=Epic Material
+item.ntpp:legendary_material=Legendary Material
+item.ntpp:mythic_material=Mythic Material
+
+entity.ntpp:wrath_zombie.name=Wrath Zombie
+entity.ntpp:hollow_skeleton.name=Hollow Skeleton
+entity.ntpp:edge_wolf.name=Edge Wolf
+entity.ntpp:lucky_cat.name=Lucky Cat
+entity.ntpp:gale_horse.name=Gale Horse
+entity.ntpp:gale_donkey.name=Gale Donkey
+entity.ntpp:tide_axolotl.name=Tide Axolotl
+entity.ntpp:farm_cow.name=Farm Cow
+entity.ntpp:farm_sheep.name=Farm Sheep
+entity.ntpp:farm_pig.name=Farm Pig
+entity.ntpp:farm_chicken.name=Farm Chicken
+entity.ntpp:ember_strider.name=Ember Strider
+entity.ntpp:durandal_wolf.name=Durandal Wolf
+entity.ntpp:tempest_horse.name=Tempest Horse
+entity.ntpp:tempest_donkey.name=Tempest Donkey
+entity.ntpp:tempest_mule.name=Tempest Mule
+entity.ntpp:hymn_warden.name=Hymn Warden
+entity.ntpp:bastion_golem.name=Bastion Golem
+entity.ntpp:oracle_allay.name=Oracle Allay
+entity.ntpp:storm_wither.name=Storm Wither
+entity.ntpp:excalibur_wolf.name=Excalibur Wolf

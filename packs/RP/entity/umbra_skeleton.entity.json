@@ -1,0 +1,73 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "ntpp:umbra_skeleton",
+            "enable_attachables": true,
+            "materials": {
+                "default": "skeleton"
+            },
+            "textures": {
+                "default": "textures/entity/skeleton/skeleton"
+            },
+            "geometry": {
+                "default": "geometry.skeleton.v1.8"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+                ]
+            },
+            "animations": {
+                "look_at_target_default": "animation.humanoid.look_at_target.default",
+                "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+                "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+                "move": "animation.humanoid.move",
+                "holding": "animation.humanoid.holding",
+                "charging": "animation.humanoid.charging",
+                "attack.rotations": "animation.humanoid.attack.rotations",
+                "bob": "animation.humanoid.bob",
+                "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+                "bow_and_arrow": "animation.humanoid.bow_and_arrow",
+                "swimming": "animation.zombie.swimming",
+                "skeleton_attack": "animation.skeleton.attack"
+            },
+            "animation_controllers": [
+                {
+                    "look_at_target": "controller.animation.humanoid.look_at_target"
+                },
+                {
+                    "move": "controller.animation.humanoid.move"
+                },
+                {
+                    "holding": "controller.animation.humanoid.holding"
+                },
+                {
+                    "charging": "controller.animation.humanoid.charging"
+                },
+                {
+                    "attack": "controller.animation.humanoid.attack"
+                },
+                {
+                    "bob": "controller.animation.humanoid.bob"
+                },
+                {
+                    "damage_nearby_mobs": "controller.animation.humanoid.damage_nearby_mobs"
+                },
+                {
+                    "bow_and_arrow": "controller.animation.humanoid.bow_and_arrow"
+                },
+                {
+                    "skeleton_attack": "controller.animation.skeleton.attack"
+                }
+            ],
+            "render_controllers": [
+                "controller.render.skeleton"
+            ],
+            "spawn_egg": {
+                "base_color": "#1a1a2e",
+                "overlay_color": "#7b2fff"
+            }
+        }
+    }
+}

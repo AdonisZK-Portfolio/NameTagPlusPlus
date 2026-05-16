@@ -1,0 +1,140 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "ntpp:typhoon_donkey",
+            "runtime_identifier": "minecraft:donkey",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "ntpp:typhoon_wild": {
+                "minecraft:tameable": {
+                    "probability": 1,
+                    "tame_items": "golden_apple",
+                    "tame_event": {
+                        "event": "ntpp:on_tame",
+                        "target": "self"
+                    }
+                }
+            },
+            "ntpp:typhoon_tame": {
+                "minecraft:is_tamed": {},
+                "minecraft:input_ground_controlled": {},
+                "minecraft:horse.jump_strength": {
+                    "value": {
+                        "range_min": 0.4,
+                        "range_max": 1
+                    }
+                },
+                "minecraft:can_power_jump": {},
+                "minecraft:behavior.teleport_to_owner": {
+                    "priority": 1,
+                    "filters": {
+                        "test": "owner_distance",
+                        "operator": ">",
+                        "value": 36
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "donkey",
+                    "mob"
+                ]
+            },
+            "minecraft:collision_box": {
+                "width": 1.4,
+                "height": 1.6
+            },
+            "minecraft:health": {
+                "value": 61,
+                "max": 61
+            },
+            "minecraft:fire_immune": {},
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:rideable": {
+                "seat_count": 1,
+                "family_types": [
+                    "player"
+                ],
+                "interact_text": "action.interact.ride.horse",
+                "seats": {
+                    "position": [
+                        0,
+                        1.1,
+                        -0.2
+                    ]
+                }
+            },
+            "minecraft:movement": {
+                "value": 0.175
+            },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": true,
+                "avoid_damage_blocks": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "fall",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.panic": {
+                "priority": 1,
+                "speed_multiplier": 1.2
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 6,
+                "speed_multiplier": 0.7
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 7,
+                "look_distance": 6
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 8
+            }
+        },
+        "events": {
+            "ntpp:spawn_as_tamed": {
+                "remove": {
+                    "component_groups": [
+                        "ntpp:typhoon_wild"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ntpp:typhoon_tame"
+                    ]
+                }
+            },
+            "ntpp:on_tame": {
+                "remove": {
+                    "component_groups": [
+                        "ntpp:typhoon_wild"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ntpp:typhoon_tame"
+                    ]
+                }
+            }
+        }
+    }
+}

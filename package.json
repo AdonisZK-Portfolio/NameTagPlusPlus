@@ -1,0 +1,10 @@
+{
+  "name": "name-tag-plus-plus",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minecraft Bedrock add-on built around tiered Name Tag transformations, companions, enemies, and boss encounters.",
+  "dependencies": {
+    "@minecraft/server": "^2.4.0",
+    "@minecraft/server-ui": "^2.0.0"
+  }
+}

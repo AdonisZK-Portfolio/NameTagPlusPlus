@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ntpp:legendary_nametag_recipe"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " L ",
+            "LNL",
+            " L "
+        ],
+        "key": {
+            "L": {
+                "item": "ntpp:legendary_material"
+            },
+            "N": {
+                "item": "minecraft:name_tag"
+            }
+        },
+        "unlock": [
+            {
+                "item": "ntpp:legendary_material"
+            }
+        ],
+        "result": {
+            "item": "ntpp:legendary_nametag",
+            "count": 1
+        }
+    }
+}

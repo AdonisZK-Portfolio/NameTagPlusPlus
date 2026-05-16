@@ -1,0 +1,12 @@
+node_modules/
+
+build/
+.regolith/
+*.mcaddon
+*.mcpack
+*.zip
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

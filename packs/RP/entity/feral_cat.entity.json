@@ -1,0 +1,63 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "ntpp:feral_cat",
+            "materials": {
+                "default": "cat"
+            },
+            "textures": {
+                "white": "textures/entity/cat/allblackcat",
+                "black": "textures/entity/cat/allblackcat",
+                "red": "textures/entity/cat/allblackcat",
+                "siamese": "textures/entity/cat/allblackcat",
+                "british": "textures/entity/cat/allblackcat",
+                "calico": "textures/entity/cat/allblackcat",
+                "persian": "textures/entity/cat/allblackcat",
+                "ragdoll": "textures/entity/cat/allblackcat",
+                "tabby": "textures/entity/cat/allblackcat",
+                "jellie": "textures/entity/cat/allblackcat",
+                "all_black": "textures/entity/cat/allblackcat",
+                "white_tame": "textures/entity/cat/allblackcat",
+                "black_tame": "textures/entity/cat/allblackcat",
+                "red_tame": "textures/entity/cat/allblackcat",
+                "siamese_tame": "textures/entity/cat/allblackcat",
+                "british_tame": "textures/entity/cat/allblackcat",
+                "calico_tame": "textures/entity/cat/allblackcat",
+                "persian_tame": "textures/entity/cat/allblackcat",
+                "ragdoll_tame": "textures/entity/cat/allblackcat",
+                "tabby_tame": "textures/entity/cat/allblackcat",
+                "all_black_tame": "textures/entity/cat/allblackcat",
+                "jellie_tame": "textures/entity/cat/allblackcat"
+            },
+            "geometry": {
+                "default": "geometry.cat"
+            },
+            "animations": {
+                "sneak": "animation.cat.sneak",
+                "walk": "animation.cat.walk",
+                "sprint": "animation.cat.sprint",
+                "sit": "animation.cat.sit",
+                "look_at_target": "animation.common.look_at_target",
+                "baby_transform": "animation.cat.baby_transform",
+                "lie_down": "animation.cat.lie_down",
+                "baby_lie_down": "animation.cat.baby_lie_down",
+                "baby_sit": "animation.cat.baby_sit"
+            },
+            "animation_controllers": [
+                {
+                    "look_at_target": "controller.animation.cat.look_at_target"
+                },
+                {
+                    "move": "controller.animation.cat.move"
+                },
+                {
+                    "baby": "controller.animation.cat.baby"
+                }
+            ],
+            "render_controllers": [
+                "controller.render.cat"
+            ]
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ntpp:mythic_nametag_recipe"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " M ",
+            "MNM",
+            " M "
+        ],
+        "key": {
+            "M": {
+                "item": "ntpp:mythic_material"
+            },
+            "N": {
+                "item": "minecraft:name_tag"
+            }
+        },
+        "unlock": [
+            {
+                "item": "ntpp:mythic_material"
+            }
+        ],
+        "result": {
+            "item": "ntpp:mythic_nametag",
+            "count": 1
+        }
+    }
+}

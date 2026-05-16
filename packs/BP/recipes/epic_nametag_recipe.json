@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ntpp:epic_nametag_recipe"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " E ",
+            "ENE",
+            " E "
+        ],
+        "key": {
+            "E": {
+                "item": "ntpp:epic_material"
+            },
+            "N": {
+                "item": "minecraft:name_tag"
+            }
+        },
+        "unlock": [
+            {
+                "item": "ntpp:epic_material"
+            }
+        ],
+        "result": {
+            "item": "ntpp:epic_nametag",
+            "count": 1
+        }
+    }
+}

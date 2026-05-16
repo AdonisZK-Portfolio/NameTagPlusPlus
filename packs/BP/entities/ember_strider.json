@@ -1,0 +1,125 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "ntpp:ember_strider",
+            "runtime_identifier": "minecraft:strider",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "ntpp:ember_wild": {
+                "minecraft:tameable": {
+                    "probability": 1.0,
+                    "tame_items": "warped_fungus",
+                    "tame_event": {
+                        "event": "ntpp:on_tame",
+                        "target": "self"
+                    }
+                }
+            },
+            "ntpp:ember_tame": {
+                "minecraft:is_tamed": {},
+                "minecraft:input_ground_controlled": {},
+                "minecraft:behavior.teleport_to_owner": {
+                    "priority": 1,
+                    "filters": {
+                        "test": "owner_distance",
+                        "operator": ">",
+                        "value": 36
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "strider",
+                    "mob"
+                ]
+            },
+            "minecraft:collision_box": {
+                "width": 0.9,
+                "height": 1.7
+            },
+            "minecraft:health": {
+                "value": 50,
+                "max": 50
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:rideable": {
+                "seat_count": 1,
+                "family_types": [
+                    "player"
+                ],
+                "interact_text": "action.interact.ride.horse",
+                "seats": {
+                    "position": [
+                        0.0,
+                        1.65,
+                        -0.2
+                    ]
+                }
+            },
+            "minecraft:movement": {
+                "value": 0.16
+            },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": false,
+                "can_path_over_lava": true,
+                "avoid_damage_blocks": false
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:fire_immune": {},
+            "minecraft:lava_movement": {
+                "value": 0.32
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 6,
+                "speed_multiplier": 0.8
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 7,
+                "look_distance": 6.0
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 8
+            }
+        },
+        "events": {
+            "ntpp:spawn_as_tamed": {
+                "remove": {
+                    "component_groups": [
+                        "ntpp:ember_wild"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ntpp:ember_tame"
+                    ]
+                }
+            },
+            "ntpp:on_tame": {
+                "remove": {
+                    "component_groups": [
+                        "ntpp:ember_wild"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ntpp:ember_tame"
+                    ]
+                }
+            }
+        }
+    }
+}

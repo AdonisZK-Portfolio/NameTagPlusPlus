@@ -1,0 +1,33 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "ntpp:rare_nametag_recipe"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " R ",
+            "RNR",
+            " R "
+        ],
+        "key": {
+            "R": {
+                "item": "ntpp:rare_material"
+            },
+            "N": {
+                "item": "minecraft:name_tag"
+            }
+        },
+        "unlock": [
+            {
+                "item": "ntpp:rare_material"
+            }
+        ],
+        "result": {
+            "item": "ntpp:rare_nametag",
+            "count": 1
+        }
+    }
+}

@@ -1,0 +1,189 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "ntpp:umbra_skeleton",
+            "runtime_identifier": "minecraft:skeleton",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "ntpp:umbra_wild": {
+                "minecraft:tameable": {
+                    "probability": 1.0,
+                    "tame_items": "bone",
+                    "tame_event": {
+                        "event": "ntpp:on_tame",
+                        "target": "self"
+                    }
+                }
+            },
+            "ntpp:umbra_tame": {
+                "minecraft:is_tamed": {},
+                "minecraft:tameable": {
+                    "probability": 1.0,
+                    "tame_items": "bone"
+                },
+                "minecraft:behavior.teleport_to_owner": {
+                    "priority": 1,
+                    "filters": {
+                        "any_of": [
+                            {
+                                "all_of": [
+                                    {
+                                        "test": "owner_distance",
+                                        "operator": ">",
+                                        "value": 12
+                                    },
+                                    {
+                                        "test": "is_panicking"
+                                    }
+                                ]
+                            },
+                            {
+                                "all_of": [
+                                    {
+                                        "test": "owner_distance",
+                                        "operator": ">",
+                                        "value": 24
+                                    },
+                                    {
+                                        "test": "has_target"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "minecraft:behavior.owner_hurt_by_target": {
+                    "priority": 1
+                },
+                "minecraft:behavior.owner_hurt_target": {
+                    "priority": 2
+                },
+                "minecraft:behavior.stay_while_sitting": {
+                    "priority": 3
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 4,
+                    "burst_shots": 3,
+                    "burst_interval": 0.3,
+                    "charge_charged_trigger": 0.0,
+                    "charge_shoot_trigger": 1.0,
+                    "attack_interval_min": 3.0,
+                    "attack_interval_max": 5.0,
+                    "attack_radius": 16.0
+                },
+                "minecraft:behavior.follow_owner": {
+                    "priority": 5,
+                    "speed_multiplier": 1.2,
+                    "start_distance": 10,
+                    "stop_distance": 2
+                },
+                "minecraft:sittable": {}
+            }
+        },
+        "components": {
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:nameable": {},
+            "minecraft:type_family": {
+                "family": [
+                    "undead",
+                    "mob",
+                    "ntpp_companion"
+                ]
+            },
+            "minecraft:collision_box": {
+                "width": 0.6,
+                "height": 1.9
+            },
+            "minecraft:health": {
+                "value": 70,
+                "max": 70
+            },
+            "minecraft:attack": {
+                "damage": 5
+            },
+            "minecraft:fire_immune": {},
+            "minecraft:movement": {
+                "value": 0.25
+            },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": true,
+                "avoid_damage_blocks": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": 0,
+                "breathes_water": true
+            },
+            "minecraft:shooter": {
+                "def": "minecraft:arrow",
+                "power": 1.6,
+                "sound": "bow"
+            },
+            "minecraft:equipment": {
+                "table": "loot_tables/entities/skeleton_gear.json"
+            },
+            "minecraft:leashable": {
+                "soft_distance": 4.0,
+                "hard_distance": 6.0,
+                "max_distance": 10.0
+            },
+            "minecraft:despawn": {
+                "despawn_from_distance": {}
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 7
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 8,
+                "look_distance": 8,
+                "probability": 0.02
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 9,
+                "speed_multiplier": 1.0
+            }
+        },
+        "events": {
+            "ntpp:spawn_as_tamed": {
+                "remove": {
+                    "component_groups": [
+                        "ntpp:umbra_wild"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ntpp:umbra_tame"
+                    ]
+                }
+            },
+            "ntpp:on_tame": {
+                "remove": {
+                    "component_groups": [
+                        "ntpp:umbra_wild"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ntpp:umbra_tame"
+                    ]
+                }
+            }
+        }
+    }
+}

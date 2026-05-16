@@ -1,0 +1,96 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "ntpp:dusk_bat",
+            "runtime_identifier": "minecraft:bat",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "components": {
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:nameable": {},
+            "minecraft:type_family": {
+                "family": [
+                    "bat",
+                    "mob"
+                ]
+            },
+            "minecraft:collision_box": {
+                "width": 0.5,
+                "height": 0.9
+            },
+            "minecraft:health": {
+                "value": 26,
+                "max": 26
+            },
+            "minecraft:attack": {
+                "damage": 2
+            },
+            "minecraft:fire_immune": {},
+            "minecraft:movement": {
+                "value": 0.6
+            },
+            "minecraft:movement.fly": {},
+            "minecraft:navigation.fly": {
+                "can_path_over_water": true
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": 0,
+                "breathes_air": true
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/ntpp/dusk_bat.json"
+            },
+            "minecraft:experience_reward": {
+                "on_death": "query.last_hit_by_player ? 3 : 0"
+            },
+            "minecraft:despawn": {
+                "despawn_from_distance": {}
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "must_see": true,
+                "reselect_targets": true,
+                "within_radius": 16.0,
+                "entity_types": [
+                    {
+                        "filters": {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        "max_dist": 16
+                    }
+                ]
+            },
+            "minecraft:behavior.melee_box_attack": {
+                "priority": 4,
+                "track_target": true
+            },
+            "minecraft:behavior.random_fly": {
+                "priority": 6,
+                "xz_dist": 15,
+                "y_dist": 7
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 7,
+                "look_distance": 6
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 8
+            }
+        }
+    }
+}

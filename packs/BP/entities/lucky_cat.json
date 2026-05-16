@@ -1,0 +1,127 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "ntpp:lucky_cat",
+            "runtime_identifier": "minecraft:cat",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "ntpp:lucky_tame": {
+                "minecraft:is_tamed": {},
+                "minecraft:tameable": {
+                    "probability": 1.0,
+                    "tame_items": "fish"
+                },
+                "minecraft:sittable": {},
+                "minecraft:behavior.stay_while_sitting": {
+                    "priority": 3
+                },
+                "minecraft:behavior.follow_owner": {
+                    "priority": 4,
+                    "speed_multiplier": 1.0,
+                    "start_distance": 10,
+                    "stop_distance": 2
+                },
+                "minecraft:behavior.teleport_to_owner": {
+                    "priority": 1,
+                    "filters": {
+                        "any_of": [
+                            {
+                                "all_of": [
+                                    {
+                                        "test": "owner_distance",
+                                        "operator": ">",
+                                        "value": 12
+                                    },
+                                    {
+                                        "test": "is_panicking"
+                                    }
+                                ]
+                            },
+                            {
+                                "test": "owner_distance",
+                                "operator": ">",
+                                "value": 36
+                            }
+                        ]
+                    }
+                },
+                "minecraft:behavior.owner_hurt_by_target": {
+                    "priority": 1
+                },
+                "minecraft:behavior.owner_hurt_target": {
+                    "priority": 2
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "cat",
+                    "mob"
+                ]
+            },
+            "minecraft:collision_box": {
+                "width": 0.6,
+                "height": 0.7
+            },
+            "minecraft:health": {
+                "value": 40,
+                "max": 40
+            },
+            "minecraft:attack": {
+                "damage": 4
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:movement": {
+                "value": 0.3
+            },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": true,
+                "avoid_damage_blocks": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.panic": {
+                "priority": 1,
+                "speed_multiplier": 1.25
+            },
+            "minecraft:behavior.melee_attack": {
+                "priority": 5,
+                "speed_multiplier": 1.2,
+                "track_target": true
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 8,
+                "speed_multiplier": 0.8
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 9,
+                "look_distance": 6.0
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 10
+            }
+        },
+        "events": {
+            "ntpp:spawn_as_tamed": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:lucky_tame"
+                    ]
+                }
+            }
+        }
+    }
+}

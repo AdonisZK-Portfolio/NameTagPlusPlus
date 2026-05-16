@@ -1,0 +1,283 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "ntpp:gale_horse",
+            "runtime_identifier": "minecraft:horse",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "ntpp:variant_0": {
+                "minecraft:variant": {
+                    "value": 0
+                }
+            },
+            "ntpp:variant_1": {
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "ntpp:variant_2": {
+                "minecraft:variant": {
+                    "value": 2
+                }
+            },
+            "ntpp:variant_3": {
+                "minecraft:variant": {
+                    "value": 3
+                }
+            },
+            "ntpp:variant_4": {
+                "minecraft:variant": {
+                    "value": 4
+                }
+            },
+            "ntpp:variant_5": {
+                "minecraft:variant": {
+                    "value": 5
+                }
+            },
+            "ntpp:variant_6": {
+                "minecraft:variant": {
+                    "value": 6
+                }
+            },
+            "ntpp:mark_variant_0": {
+                "minecraft:mark_variant": {
+                    "value": 0
+                }
+            },
+            "ntpp:mark_variant_1": {
+                "minecraft:mark_variant": {
+                    "value": 1
+                }
+            },
+            "ntpp:mark_variant_2": {
+                "minecraft:mark_variant": {
+                    "value": 2
+                }
+            },
+            "ntpp:mark_variant_3": {
+                "minecraft:mark_variant": {
+                    "value": 3
+                }
+            },
+            "ntpp:mark_variant_4": {
+                "minecraft:mark_variant": {
+                    "value": 4
+                }
+            },
+            "ntpp:gale_wild": {
+                "minecraft:tameable": {
+                    "probability": 1,
+                    "tame_items": "golden_apple",
+                    "tame_event": {
+                        "event": "ntpp:on_tame",
+                        "target": "self"
+                    }
+                }
+            },
+            "ntpp:gale_tame": {
+                "minecraft:is_tamed": {},
+                "minecraft:input_ground_controlled": {},
+                "minecraft:horse.jump_strength": {
+                    "value": {
+                        "range_min": 0.4,
+                        "range_max": 1
+                    }
+                },
+                "minecraft:can_power_jump": {},
+                "minecraft:behavior.teleport_to_owner": {
+                    "priority": 1,
+                    "filters": {
+                        "test": "owner_distance",
+                        "operator": ">",
+                        "value": 36
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "horse",
+                    "mob"
+                ]
+            },
+            "minecraft:collision_box": {
+                "width": 1.4,
+                "height": 1.6
+            },
+            "minecraft:health": {
+                "value": 41,
+                "max": 41
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:rideable": {
+                "seat_count": 1,
+                "family_types": [
+                    "player"
+                ],
+                "interact_text": "action.interact.ride.horse",
+                "seats": {
+                    "position": [
+                        0,
+                        1.1,
+                        -0.2
+                    ]
+                }
+            },
+            "minecraft:movement": {
+                "value": 0.225
+            },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": true,
+                "avoid_damage_blocks": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "fall",
+                        "deals_damage": "no"
+                    }
+                ]
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.panic": {
+                "priority": 1,
+                "speed_multiplier": 1.2
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 6,
+                "speed_multiplier": 0.7
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 7,
+                "look_distance": 6
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 8
+            }
+        },
+        "events": {
+            "ntpp:spawn_as_tamed": {
+                "remove": {
+                    "component_groups": [
+                        "ntpp:gale_wild"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ntpp:gale_tame"
+                    ]
+                }
+            },
+            "ntpp:on_tame": {
+                "remove": {
+                    "component_groups": [
+                        "ntpp:gale_wild"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "ntpp:gale_tame"
+                    ]
+                }
+            },
+            "ntpp:set_variant_0": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:variant_0"
+                    ]
+                }
+            },
+            "ntpp:set_variant_1": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:variant_1"
+                    ]
+                }
+            },
+            "ntpp:set_variant_2": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:variant_2"
+                    ]
+                }
+            },
+            "ntpp:set_variant_3": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:variant_3"
+                    ]
+                }
+            },
+            "ntpp:set_variant_4": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:variant_4"
+                    ]
+                }
+            },
+            "ntpp:set_variant_5": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:variant_5"
+                    ]
+                }
+            },
+            "ntpp:set_variant_6": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:variant_6"
+                    ]
+                }
+            },
+            "ntpp:set_mark_variant_0": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:mark_variant_0"
+                    ]
+                }
+            },
+            "ntpp:set_mark_variant_1": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:mark_variant_1"
+                    ]
+                }
+            },
+            "ntpp:set_mark_variant_2": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:mark_variant_2"
+                    ]
+                }
+            },
+            "ntpp:set_mark_variant_3": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:mark_variant_3"
+                    ]
+                }
+            },
+            "ntpp:set_mark_variant_4": {
+                "add": {
+                    "component_groups": [
+                        "ntpp:mark_variant_4"
+                    ]
+                }
+            }
+        }
+    }
+}
