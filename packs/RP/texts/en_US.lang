@@ -1,6 +1,8 @@
 pack.name=Name Tag++ RP
 pack.description=Build your army. One name at a time.
 
+item.ntpp:guidebook=Guidebook
+
 item.ntpp:rare_nametag=Rare Name Tag
 item.ntpp:epic_nametag=Epic Name Tag
 item.ntpp:legendary_nametag=Legendary Name Tag
