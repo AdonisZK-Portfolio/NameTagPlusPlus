@@ -9,6 +9,9 @@ All current visual, audio, and icon assets are placeholder assets for prototype 
 ## Links
 
 - [Game Design Document](https://www.notion.so/Name-Tag-GDD-35e4dedd24de81c59437ee4f43213e03)
+- YouTube Video: [Watch on YouTube](https://youtu.be/Eipn8S22Qt4)
+
+  [![YouTube Video thumbnail](https://img.youtube.com/vi/Eipn8S22Qt4/hqdefault.jpg)](https://youtu.be/Eipn8S22Qt4)
 - [rgl](https://github.com/ink0rr/rgl)
 
 ## Download
